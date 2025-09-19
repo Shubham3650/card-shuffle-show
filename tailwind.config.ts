@@ -46,6 +46,16 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          red: "hsl(var(--card-red))",
+          black: "hsl(var(--card-black))",
+          active: "hsl(var(--card-active))",
+          played: "hsl(var(--card-played))",
+        },
+        gaming: {
+          table: "var(--gradient-table)",
+          card: "var(--gradient-card)",
+          active: "var(--gradient-active)",
+          played: "var(--gradient-played)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -80,10 +90,32 @@ export default {
             height: "0",
           },
         },
+        "card-flip": {
+          "0%": { transform: "rotateY(0deg)" },
+          "50%": { transform: "rotateY(90deg)" },
+          "100%": { transform: "rotateY(0deg)" },
+        },
+        "card-slide": {
+          "0%": { transform: "translateY(0px)", opacity: "1" },
+          "50%": { transform: "translateY(-20px)", opacity: "0.7" },
+          "100%": { transform: "translateY(0px)", opacity: "1" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(140 60% 45% / 0.3)" },
+          "50%": { boxShadow: "0 0 30px hsl(140 60% 45% / 0.6)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "card-flip": "card-flip 0.6s ease-in-out",
+        "card-slide": "card-slide 0.4s ease-out",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+      },
+      boxShadow: {
+        'card': 'var(--shadow-card)',
+        'card-hover': 'var(--shadow-card-hover)',
+        'glow': 'var(--shadow-glow)',
       },
     },
   },
